@@ -1,0 +1,382 @@
+>Cluster 0
+0	65aa, >PDB:4bqd:B... *
+>Cluster 1
+0	57aa, >PDB:3auh:G... at 100.00%
+1	57aa, >PDB:3aue:F... at 100.00%
+2	56aa, >PDB:3auh:A... at 100.00%
+3	58aa, >PDB:3aui:A... at 100.00%
+4	57aa, >PDB:3aue:A... at 100.00%
+5	58aa, >PDB:3aub:A... at 100.00%
+6	56aa, >PDB:3auh:E... at 100.00%
+7	59aa, >PDB:3aug:A... at 100.00%
+8	58aa, >PDB:3aub:B... at 100.00%
+9	60aa, >PDB:3aue:B... at 100.00%
+10	56aa, >PDB:3auh:C... at 100.00%
+11	56aa, >PDB:3aug:C... at 100.00%
+12	56aa, >PDB:3aue:G... at 100.00%
+13	57aa, >PDB:3aui:B... at 100.00%
+14	63aa, >PDB:3aue:E... at 100.00%
+15	63aa, >PDB:3aue:H... at 100.00%
+16	64aa, >PDB:3aue:C... *
+17	63aa, >PDB:3aue:D... at 100.00%
+>Cluster 2
+0	63aa, >PDB:1zr0:B... *
+1	63aa, >PDB:1zr0:D... at 100.00%
+>Cluster 3
+0	60aa, >PDB:4iso:B... at 100.00%
+1	60aa, >PDB:4isl:B... at 100.00%
+2	62aa, >PDB:4isn:B... *
+>Cluster 4
+0	54aa, >PDB:3t62:E... at 100.00%
+1	54aa, >PDB:3t62:D... at 100.00%
+2	56aa, >PDB:3ofw:A... at 100.00%
+3	54aa, >PDB:3t62:F... at 100.00%
+4	61aa, >PDB:3m7q:B... *
+5	55aa, >PDB:1shp:A... at 100.00%
+>Cluster 5
+0	60aa, >PDB:4dtg:K... *
+1	58aa, >PDB:1tfx:D... at 100.00%
+2	58aa, >PDB:1tfx:C... at 100.00%
+>Cluster 6
+0	60aa, >PDB:5yv7:A... *
+>Cluster 7
+0	60aa, >PDB:6kzf:A... *
+>Cluster 8
+0	56aa, >PDB:1y62:E... at 100.00%
+1	56aa, >PDB:1y62:C... at 100.00%
+2	56aa, >PDB:1y62:D... at 100.00%
+3	56aa, >PDB:1y62:F... at 100.00%
+4	56aa, >PDB:1y62:A... at 100.00%
+5	56aa, >PDB:1y62:B... at 100.00%
+6	60aa, >PDB:2ca7:A... *
+>Cluster 9
+0	56aa, >PDB:3btm:I... at 100.00%
+1	59aa, >PDB:1t8l:D... *
+2	59aa, >PDB:1t8l:B... at 100.00%
+>Cluster 10
+0	59aa, >PDB:6q61:A... *
+>Cluster 11
+0	58aa, >PDB:6q6c:A... at 100.00%
+1	59aa, >PDB:6q6c:B... *
+>Cluster 12
+0	59aa, >PDB:1dtx:A... *
+>Cluster 13
+0	58aa, >PDB:1bpi:A... *
+1	58aa, >PDB:6yhy:A... at 100.00%
+2	58aa, >PDB:6zoi:A... at 100.00%
+3	58aa, >PDB:6yht:A... at 100.00%
+4	58aa, >PDB:3fp8:I... at 100.00%
+5	58aa, >PDB:3fp6:I... at 100.00%
+6	57aa, >PDB:1f5r:I... at 100.00%
+7	58aa, >PDB:4pti:A... at 100.00%
+8	58aa, >PDB:1bzx:I... at 100.00%
+9	57aa, >PDB:6f1f:D... at 100.00%
+10	56aa, >PDB:1ykt:B... at 100.00%
+11	56aa, >PDB:3tgi:I... at 100.00%
+12	56aa, >PDB:1f7z:I... at 100.00%
+13	57aa, >PDB:6f1f:E... at 100.00%
+14	56aa, >PDB:3tgj:I... at 100.00%
+15	56aa, >PDB:3tgk:I... at 100.00%
+16	56aa, >PDB:1fy8:I... at 100.00%
+17	57aa, >PDB:6f1f:B... at 100.00%
+18	58aa, >PDB:1d0d:B... at 100.00%
+19	57aa, >PDB:6f1f:A... at 100.00%
+20	57aa, >PDB:6f1f:C... at 100.00%
+21	56aa, >PDB:3u1j:E... at 100.00%
+22	56aa, >PDB:2tpi:I... at 100.00%
+23	57aa, >PDB:3ldi:A... at 100.00%
+24	58aa, >PDB:4bnr:I... at 100.00%
+25	58aa, >PDB:2r9p:I... at 100.00%
+26	57aa, >PDB:3ldi:E... at 100.00%
+27	58aa, >PDB:4bnr:J... at 100.00%
+28	58aa, >PDB:3otj:I... at 100.00%
+29	58aa, >PDB:1tpa:I... at 100.00%
+30	57aa, >PDB:2hex:C... at 100.00%
+31	58aa, >PDB:2ptc:I... at 100.00%
+32	58aa, >PDB:4dg4:H... at 100.00%
+33	56aa, >PDB:3ldj:C... at 100.00%
+34	58aa, >PDB:2tgp:I... at 100.00%
+35	58aa, >PDB:3tpi:I... at 100.00%
+36	56aa, >PDB:2hex:E... at 100.00%
+37	58aa, >PDB:9pti:A... at 100.00%
+38	56aa, >PDB:2hex:A... at 100.00%
+39	56aa, >PDB:3ldm:E... at 100.00%
+40	56aa, >PDB:3ldi:C... at 100.00%
+41	56aa, >PDB:3ldm:B... at 100.00%
+42	58aa, >PDB:2r9p:F... at 100.00%
+43	56aa, >PDB:1bz5:C... at 100.00%
+44	56aa, >PDB:1eaw:B... at 100.00%
+45	58aa, >PDB:4dg4:C... at 100.00%
+46	56aa, >PDB:2kai:I... at 100.00%
+47	56aa, >PDB:1bhc:J... at 100.00%
+48	56aa, >PDB:1bhc:A... at 100.00%
+49	56aa, >PDB:3ldj:B... at 100.00%
+50	56aa, >PDB:1bz5:E... at 100.00%
+51	56aa, >PDB:1bz5:A... at 100.00%
+52	56aa, >PDB:6pti:A... at 100.00%
+53	56aa, >PDB:2hex:D... at 100.00%
+54	56aa, >PDB:1bhc:H... at 100.00%
+55	56aa, >PDB:1bhc:D... at 100.00%
+56	56aa, >PDB:1bhc:B... at 100.00%
+57	56aa, >PDB:1bz5:B... at 100.00%
+58	56aa, >PDB:1bz5:D... at 100.00%
+59	56aa, >PDB:3ldj:A... at 100.00%
+60	56aa, >PDB:1bhc:G... at 100.00%
+61	56aa, >PDB:1bhc:F... at 100.00%
+62	56aa, >PDB:1bhc:C... at 100.00%
+63	56aa, >PDB:1bhc:E... at 100.00%
+64	58aa, >PDB:1mtn:H... at 100.00%
+65	56aa, >PDB:1bhc:I... at 100.00%
+66	58aa, >PDB:2r9p:E... at 100.00%
+67	56aa, >PDB:3ldm:A... at 100.00%
+68	55aa, >PDB:4wxv:C... at 100.00%
+69	56aa, >PDB:1b0c:B... at 100.00%
+70	58aa, >PDB:1bth:Q... at 100.00%
+71	56aa, >PDB:1b0c:C... at 100.00%
+72	56aa, >PDB:2hex:B... at 100.00%
+73	58aa, >PDB:5pti:A... at 100.00%
+74	58aa, >PDB:4dg4:E... at 100.00%
+75	56aa, >PDB:1b0c:A... at 100.00%
+76	58aa, >PDB:3ldi:B... at 100.00%
+77	56aa, >PDB:1b0c:E... at 100.00%
+78	56aa, >PDB:3ldm:C... at 100.00%
+79	55aa, >PDB:4wxv:I... at 100.00%
+80	56aa, >PDB:1b0c:D... at 100.00%
+81	58aa, >PDB:3ldi:D... at 100.00%
+82	58aa, >PDB:1bth:P... at 100.00%
+83	58aa, >PDB:1pit:A... at 100.00%
+84	56aa, >PDB:2ijo:I... at 100.00%
+85	58aa, >PDB:1cbw:I... at 100.00%
+86	58aa, >PDB:1mtn:D... at 100.00%
+87	56aa, >PDB:1eaw:D... at 100.00%
+88	58aa, >PDB:4dg4:F... at 100.00%
+89	58aa, >PDB:2ra3:I... at 100.00%
+90	56aa, >PDB:3ldm:D... at 100.00%
+91	58aa, >PDB:2r9p:G... at 100.00%
+92	58aa, >PDB:1cbw:D... at 100.00%
+93	55aa, >PDB:5yvu:I... at 100.00%
+94	58aa, >PDB:4wwy:I... at 100.00%
+95	56aa, >PDB:3btk:I... at 100.00%
+96	58aa, >PDB:4wwy:C... at 100.00%
+97	54aa, >PDB:3gym:J... at 100.00%
+98	54aa, >PDB:3gym:I... at 100.00%
+99	56aa, >PDB:2ra3:C... at 100.00%
+100	57aa, >PDB:2ftl:I... at 100.00%
+101	58aa, >PDB:4y0y:I... at 100.00%
+102	58aa, >PDB:1oa5:5... at 100.00%
+103	58aa, >PDB:1oa6:5... at 100.00%
+>Cluster 14
+0	58aa, >PDB:5xx2:A... *
+1	58aa, >PDB:5xx2:B... at 100.00%
+>Cluster 15
+0	58aa, >PDB:1bti:A... *
+>Cluster 16
+0	58aa, >PDB:5xx8:A... *
+1	58aa, >PDB:5xx6:A... at 100.00%
+2	58aa, >PDB:5xx7:A... at 100.00%
+3	58aa, >PDB:5xx5:A... at 100.00%
+4	58aa, >PDB:5xx8:B... at 100.00%
+5	58aa, >PDB:5xx5:B... at 100.00%
+6	58aa, >PDB:5xx6:B... at 100.00%
+7	58aa, >PDB:5xx7:D... at 100.00%
+>Cluster 17
+0	58aa, >PDB:1g6x:A... *
+1	58aa, >PDB:1qlq:A... at 100.00%
+2	58aa, >PDB:1k6u:A... at 100.00%
+>Cluster 18
+0	58aa, >PDB:5jb4:A... *
+1	58aa, >PDB:5jb4:B... at 100.00%
+2	58aa, >PDB:5jb4:C... at 100.00%
+>Cluster 19
+0	58aa, >PDB:1ejm:D... *
+1	58aa, >PDB:1ejm:B... at 100.00%
+2	58aa, >PDB:1ejm:F... at 100.00%
+>Cluster 20
+0	58aa, >PDB:1fan:A... *
+>Cluster 21
+0	58aa, >PDB:5jb6:A... *
+1	57aa, >PDB:5jb6:B... at 100.00%
+2	58aa, >PDB:5jb6:C... at 100.00%
+>Cluster 22
+0	57aa, >PDB:1aal:B... at 100.00%
+1	58aa, >PDB:1aal:A... *
+>Cluster 23
+0	58aa, >PDB:5xx3:B... *
+1	58aa, >PDB:5xx3:A... at 100.00%
+>Cluster 24
+0	58aa, >PDB:5xx4:B... *
+1	58aa, >PDB:5xx4:A... at 100.00%
+>Cluster 25
+0	57aa, >PDB:5jb5:A... at 100.00%
+1	58aa, >PDB:5jb5:B... *
+2	58aa, >PDB:5jb5:C... at 100.00%
+>Cluster 26
+0	57aa, >PDB:2zvx:B... at 100.00%
+1	58aa, >PDB:2zvx:A... *
+>Cluster 27
+0	56aa, >PDB:5jb7:A... at 100.00%
+1	58aa, >PDB:5jb7:B... *
+2	58aa, >PDB:5jb7:C... at 100.00%
+>Cluster 28
+0	58aa, >PDB:7pti:A... *
+>Cluster 29
+0	58aa, >PDB:4tpi:I... *
+>Cluster 30
+0	57aa, >PDB:2zjx:B... at 100.00%
+1	58aa, >PDB:2zjx:A... *
+>Cluster 31
+0	56aa, >PDB:3ci7:B... at 100.00%
+1	58aa, >PDB:3ci7:A... *
+2	58aa, >PDB:3ci7:C... at 100.00%
+3	57aa, >PDB:3ci7:D... at 100.00%
+>Cluster 32
+0	56aa, >PDB:3aud:B... at 100.00%
+1	56aa, >PDB:3aud:A... at 100.00%
+2	58aa, >PDB:3auc:A... *
+3	57aa, >PDB:3aud:C... at 100.00%
+4	56aa, >PDB:3auc:B... at 100.00%
+>Cluster 33
+0	58aa, >PDB:1p2m:B... *
+1	58aa, >PDB:1p2m:D... at 100.00%
+2	56aa, >PDB:3btg:I... at 100.00%
+3	58aa, >PDB:1p2i:I... at 100.00%
+>Cluster 34
+0	58aa, >PDB:1t8m:B... *
+1	58aa, >PDB:1t8m:D... at 100.00%
+2	56aa, >PDB:3bth:I... at 100.00%
+>Cluster 35
+0	58aa, >PDB:1p2o:D... *
+1	58aa, >PDB:1p2o:B... at 100.00%
+2	58aa, >PDB:1p2k:I... at 100.00%
+>Cluster 36
+0	58aa, >PDB:1t7c:D... *
+1	58aa, >PDB:1t7c:B... at 100.00%
+2	56aa, >PDB:3bte:I... at 100.00%
+>Cluster 37
+0	58aa, >PDB:1t8n:D... *
+1	58aa, >PDB:1t8n:B... at 100.00%
+2	56aa, >PDB:3btt:I... at 100.00%
+>Cluster 38
+0	58aa, >PDB:1t8o:B... *
+1	58aa, >PDB:1t8o:D... at 100.00%
+2	56aa, >PDB:3btw:I... at 100.00%
+>Cluster 39
+0	58aa, >PDB:1p2n:D... *
+1	58aa, >PDB:1p2n:B... at 100.00%
+2	56aa, >PDB:1p2j:I... at 100.00%
+>Cluster 40
+0	58aa, >PDB:1p2q:B... *
+1	58aa, >PDB:1p2q:D... at 100.00%
+2	56aa, >PDB:3btf:I... at 100.00%
+>Cluster 41
+0	58aa, >PDB:3p95:E... *
+>Cluster 42
+0	58aa, >PDB:3p92:E... *
+>Cluster 43
+0	58aa, >PDB:1jv9:A... *
+1	58aa, >PDB:1jv8:A... at 100.00%
+>Cluster 44
+0	58aa, >PDB:2fi4:I... *
+>Cluster 45
+0	58aa, >PDB:2fi5:I... *
+>Cluster 46
+0	58aa, >PDB:2fi3:I... *
+>Cluster 47
+0	58aa, >PDB:2ftm:B... *
+>Cluster 48
+0	56aa, >PDB:5zj3:A... at 100.00%
+1	56aa, >PDB:3uir:C... at 100.00%
+2	56aa, >PDB:3d65:I... at 100.00%
+3	56aa, >PDB:5zj3:C... at 100.00%
+4	58aa, >PDB:3byb:A... *
+5	58aa, >PDB:5zj3:B... at 100.00%
+6	58aa, >PDB:3byb:C... at 100.00%
+>Cluster 49
+0	57aa, >PDB:3uir:D... at 100.00%
+1	58aa, >PDB:3byb:B... *
+>Cluster 50
+0	58aa, >PDB:1kth:A... *
+1	58aa, >PDB:2knt:A... at 100.00%
+2	55aa, >PDB:1knt:A... at 100.00%
+>Cluster 51
+0	58aa, >PDB:1ld5:A... *
+>Cluster 52
+0	57aa, >PDB:3wny:G... *
+1	57aa, >PDB:3wny:B... at 100.00%
+2	56aa, >PDB:3wny:I... at 100.00%
+3	56aa, >PDB:3wny:A... at 100.00%
+4	56aa, >PDB:3wny:H... at 100.00%
+5	56aa, >PDB:3wny:E... at 100.00%
+6	57aa, >PDB:3wny:C... at 100.00%
+7	56aa, >PDB:3wny:F... at 100.00%
+>Cluster 53
+0	57aa, >PDB:4y11:I... *
+1	57aa, >PDB:4y10:I... at 100.00%
+2	57aa, >PDB:4y0z:I... at 100.00%
+>Cluster 54
+0	57aa, >PDB:5m4v:A... *
+>Cluster 55
+0	57aa, >PDB:3l3t:E... *
+1	57aa, >PDB:3l3t:H... at 100.00%
+2	57aa, >PDB:3l3t:G... at 100.00%
+3	57aa, >PDB:3l3t:F... at 100.00%
+>Cluster 56
+0	54aa, >PDB:5nx1:C... at 100.00%
+1	54aa, >PDB:1taw:B... at 100.00%
+2	54aa, >PDB:1ca0:D... at 100.00%
+3	57aa, >PDB:1zjd:B... *
+4	54aa, >PDB:1ca0:I... at 100.00%
+5	52aa, >PDB:3l33:F... at 100.00%
+6	52aa, >PDB:3l33:E... at 100.00%
+7	52aa, >PDB:3l33:H... at 100.00%
+8	52aa, >PDB:3l33:G... at 100.00%
+>Cluster 57
+0	57aa, >PDB:1dtk:A... *
+>Cluster 58
+0	57aa, >PDB:2m99:A... *
+>Cluster 59
+0	56aa, >PDB:1bpt:A... *
+>Cluster 60
+0	56aa, >PDB:1yld:B... *
+>Cluster 61
+0	56aa, >PDB:1ylc:B... *
+>Cluster 62
+0	56aa, >PDB:1nag:A... *
+>Cluster 63
+0	56aa, >PDB:3btq:I... *
+>Cluster 64
+0	56aa, >PDB:3btd:I... *
+>Cluster 65
+0	56aa, >PDB:1aap:A... *
+1	56aa, >PDB:1aap:B... at 100.00%
+2	56aa, >PDB:1brc:I... at 100.00%
+>Cluster 66
+0	56aa, >PDB:6gfi:E... *
+1	56aa, >PDB:6gfi:C... at 100.00%
+>Cluster 67
+0	55aa, >PDB:1fak:I... *
+>Cluster 68
+0	55aa, >PDB:5yw1:I... *
+>Cluster 69
+0	55aa, >PDB:6bx8:B... *
+1	55aa, >PDB:6bx8:H... at 100.00%
+2	54aa, >PDB:6bx8:F... at 100.00%
+3	53aa, >PDB:6bx8:D... at 100.00%
+>Cluster 70
+0	54aa, >PDB:5c67:E... *
+1	53aa, >PDB:5c67:C... at 100.00%
+>Cluster 71
+0	54aa, >PDB:6har:E... *
+>Cluster 72
+0	54aa, >PDB:4u32:X... *
+>Cluster 73
+0	54aa, >PDB:3uou:B... *
+>Cluster 74
+0	54aa, >PDB:4u30:X... *
+1	54aa, >PDB:4u30:Y... at 100.00%
+2	54aa, >PDB:4u30:Z... at 100.00%
+3	54aa, >PDB:4u30:W... at 100.00%
+>Cluster 75
+0	53aa, >PDB:5nx3:C... *
+>Cluster 76
+0	51aa, >PDB:1brb:I... *

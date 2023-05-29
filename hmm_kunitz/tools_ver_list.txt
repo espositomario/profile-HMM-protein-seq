@@ -1,0 +1,13 @@
+UniProtKB/Swiss-Prot Release 2023_02 of 03-May-2023
+PDBeFold pairwise search v2.59
+PDBeFolds MSA v2.59
+CD-HIT 4.8.1
+blastpgp 2.2.26
+HMMER 3.3.2
+Skyalign ?
+PFAM 35.0
+python 3.10.10
+conda 23.3.1
+macos 13.3.1
+
+

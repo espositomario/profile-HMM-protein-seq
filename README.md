@@ -5,5 +5,5 @@ To run this pipeline the following programms need to be installed (conda package
 - HMMER
 - CD-HIT
 - BLAST
-- BLAST-LREGACY
+- BLAST-LEGACY
 The python code was tested on python 3.10 and pipeline on MacOS 13

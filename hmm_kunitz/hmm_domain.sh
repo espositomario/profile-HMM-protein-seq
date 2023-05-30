@@ -70,8 +70,8 @@ p ../py_scripts/random_split.py hmm_result sets/kunitz_no_training.list $not_kun
 cut -f1 sets/subset_1 sets/subset_2 | sort -u | wc 
 # check that there are no seq in common between the 2 subsets
 comm -12 <(sort sets/subset_1) <(sort sets/subset_2)
-# do the classification on the subsets
-p ../py_scripts/classification.py sets/subset_1 sets/subset_2 1e-1 1e-12 
+# do the optimization on the subsets
+p ../py_scripts/optimization.py sets/subset_1 sets/subset_2 1e-1 1e-12 
 # do the classification on SwissProt
 cd sets 
-for i in $(seq 1 12);do p ../../py_scripts/calssificatiionv2.py <(cat subset_2 subset_1) 1e-$i;done
+for i in $(seq 1 12);do p ../../py_scripts/classification.py <(cat subset_2 subset_1) 1e-$i;done

@@ -131,8 +131,8 @@ grep -v "^#" hmm_result | awk -v OFS="\t" '$1=$1' | cut -f1 | cut -d '|' -f 2 > 
 grep -v "^#" hmm_result | awk -v OFS="\t" '$1=$1' | cut -f5 > eval_list
 paste id_list eval_list > hmm_result && rm id_list eval_list 
 ```
-# 4. E-value optimization and classification benchmark
-## 4.1 Generate the two subsets by random spplitting Uniprot
+## 4. E-value optimization and classification benchmark
+### 4.1 Generate the two subsets by random spplitting Uniprot
 In order to select the E-value maximizing the classification performance, the entire SP ID list was split into 2 subsets, using a python script. The subsets lists were generated randomly of equal length and with the same proportion of Kunitz proteins.
 
 _#download id list of no_kuntiz and kunitz (PF00014) in swissprot_
@@ -157,7 +157,7 @@ p ../py_scripts/random_split.py hmm_result sets/kunitz_no_training.list $not_kun
 cut -f1 sets/subset_1 sets/subset_2 | sort -u | wc 
 comm -12 <(sort sets/subset_1) <(sort sets/subset_2)
 ```
-## 4.2 E-value optimization and classification benchmark
+### 4.2 E-value optimization and classification benchmark
 Subset1 was adopted to select the best threshold and subset2 was adopted as the test set. The role of the 2 subsets was then swapped to cross-validate the results. The 2 subsets lists were annotated with either 1 or 0 depending on the presence of the Kunitz domain according to PFAM and with the E-value previously resulted from hmmsearch. Since the distribution of Kunitz and non-Kunitz was skewed, Matthews’s correlation coefficient (MCC) (2) was adopted as classification score. Compared to accuracy (3) or F1 score, the MCC is a more reliable statistical coefficient which produces a high score only if the prediction obtained good results in all of the four confusion matrix categories (true positives, false negatives, true negatives, and false positives), proportionally both to the size of positive elements and the size of negative elements in the dataset (Chicco and Jurman, 2020; Matthews, 1975).
 
 The classification benchmark was tested by running a python script (Supplementary material) for an E-value threshold decreasing exponentially from 1e-1 to 1e-12. For each subset, the E-value threshold for which the model guaranteed the best MCC was identified, and after that, it was verified that the same outcome was achieved for the other subset. The average between the best threshold for both subset was applied in benchmarking the classification for the entire SP.

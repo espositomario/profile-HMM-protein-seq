@@ -1,7 +1,7 @@
 # An HMM-based method to detect Kunitz domain starting from the BPTI structure
 This repository contains the **bash commands**, all the **pyhton codes**, and the intermediate and final results of this [project](https://github.com/espositomario/HMM_Kunitz/blob/e762b5ff539bf6a3f77e75765ed467a57e95d42f/Mario%20Esposito%20-%20LB1%20project%20report.pdf) related to the course of Laboratory of Bioinformatics 1 of the MSc in Bioinformatics - University of Bologna.
 
-However, the following pipeline is designed to work for any other protein domain.
+Anyway, the following pipeline is designed to work for any other protein domain.
 
 ## Table of contents
 

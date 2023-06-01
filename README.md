@@ -6,7 +6,6 @@ Altough this pipeline was designed specifically to model the Kunitz domain it wa
 ## Table of contents
 
 * [Requirements](https://github.com/espositomario/HMM_Kunitz#requirements)
-
 * [0. Study Workflow](https://github.com/espositomario/HMM_Kunitz#study-workflow)
 
 * [1. Training set selection](https://github.com/espositomario/HMM_Kunitz#1-training-set-selection)

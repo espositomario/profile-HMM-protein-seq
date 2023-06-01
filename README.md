@@ -44,6 +44,9 @@ Webtools links:
 The aim of this study is to develop an HMM-based method which reliably identifies the presence of the Kunitz domain in UniProtKB/SwissProt sequences. In principle, a profile HMM can be derived from unaligned sequences by training. However, the parameters for a profile HMM are more accurately estimated from a multiple sequence alignment (MSA) and this has become the method of choice (Bateman and Haft, 2002). The MSA was retrieved from the alignment of 77 structures similar to the BPTI. The HMM was trained over this MSA and then UniProtKB/SwissProt was adopted to optimize and test the classification performance of the method. 
 
 
+![workflow](https://github.com/espositomario/HMM_Kunitz/assets/104198915/195174ab-7b28-4418-a0ed-2aad2de85ac5)
+
+
 
 ## 1. Training set selection
 ### 1.1 BPTI as prototype and search for similar structures

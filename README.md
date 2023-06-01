@@ -1,6 +1,10 @@
 # An HMM-based method to detect Kunitz domain starting from the BPTI structure
-This repository contains the **bash script**, all the **pyhton codes**, and the intermediate and final results related to this study.
+This repository contains the **bash commands**, all the **pyhton codes**, and the intermediate and final results related to this study.
 However, the following pipeline is designed to work for any other protein domain.
+
+## Table of contents
+1. [Study Workflow](project URL#<header name)
+
 
 ## Study workflow
 The aim of this study is to develop an HMM-based method which reliably identifies the presence of the Kunitz domain in UniProtKB/SwissProt sequences. In principle, a profile HMM can be derived from unaligned sequences by training. However, the parameters for a profile HMM are more accurately estimated from a multiple sequence alignment (MSA) and this has become the method of choice (Bateman and Haft, 2002). The MSA was retrieved from the alignment of 77 structures similar to the BPTI. The HMM was trained over this MSA and then UniProtKB/SwissProt was adopted to optimize and test the classification performance of the method. 
@@ -27,7 +31,7 @@ Webtools links:
 * [Uniprot ID Mapping](https://www.uniprot.org/id-mapping)
 
 ## 1. Training set selection
-### BPTI as prototype and search for similar structures
+### 1.1 BPTI as prototype and search for similar structures
 The high-resolution structure of the bovine pancreatic trypsin inhibitor (1BPI) was chosen as the prototype of Kunitz domain to select the seeds (Parkin et al., 1996). The webtool [PDBeFold](https://www.ebi.ac.uk/msd-srv/ssm/) was adopted to perform a pairwise structural alignment over the entire PDB (Krissinel and Henrick, 2005; Berman et al., 2000) . PDBeFold was run with default parameters and precision set to ‘highest’ and the results were selected by a Q-score > 0.75.
 
 _#download fasta sequences_
@@ -35,7 +39,7 @@ _#download fasta sequences_
 fasta_similar_structure='bpt1_result_qscore_0.75.fasta.seq' 
 ```
 
-### Cluster identical sequences
+### 1.2 Cluster identical sequences
 To avoid a bias in the HMM construction, CD-HIT v4.8.1 was adopted to cluster identical sequences and select the longest representative for each cluster (Fu et al., 2012). A threshold of 100% identity was chosen to maintain also sequences differing for only one residue, so that no information on variation went lost.
 
 ```
@@ -43,7 +47,7 @@ cd-hit -i $fasta_similar_structure -o seeds_filt.fasta -c 1
 ```
 
 ## 2. MSA and HMM building
-### Align structures and retrieve MSA
+### 2.1 Align structures and retrieve MSA
 A multiple structure alignment between the  representativses structures was performed using the [PDBeFold](https://www.ebi.ac.uk/msd-srv/ssm/). The MSA derived from the structure alignment, was downloaded and adopted as a training set for the HMM training.
 
 #_Extract pdb id with chain to align the structures on pdbefold_
@@ -57,7 +61,7 @@ _#Align on [PDBeFold](https://www.ebi.ac.uk/msd-srv/ssm/) and download the msa_
 msa='msa_seeds.seq'
 grep . $msa > $msa.tmp && mv $msa.tmp $msa 
 ```
-### Train the HMM 
+### 2.2 Train the HMM 
 The hmmbuild program provided by HMMER v3.3.2 was chosen to train the Kunitz’s HMM, leaving the optimal trimming on the MSA to the algorithm (Eddy, 2011). The HMM profile logo was plotted with [Skyalign](http://skylign.org/) (Wheeler et al., 2014).
 
 ```
@@ -65,7 +69,7 @@ hmmbuild kunitz.hmm $msa
 ````
 
 ## 3. Test set preparation
-### Remove high-similarity sequences from the test-set
+### 3.1 Remove high-similarity sequences from the test-set
 The entire UniProt/SwissProt release_2023_02 (SP) was chosen as a test set and the annotation of Kunitz domain (PF00014) according to PFAM v35.0 was chosen as reference to evaluate the classification performance. Before testing the model, the test set was elaborated in order to avoid a bias in the model evaluation. The seed sequences and all high similarity proteins (>95%), were removed from SP in order to perform a fair test of the HMM. To identify the high-similarity proteins, blastpgp v2.2.26 (gapped-BLAST) was run with default parameters, using the training sequences as queries and the entire SP as target database (Altschul et al., 1997).
 
 _#map the training sequences PDB IDs to UniProt IDs_
@@ -96,7 +100,7 @@ _#modify the test set removing training seq_
 ids_to_remove='sets/id_to_remove'
 p ../py_scripts/remove_fasta_by_id.py $ids_to_remove $fasta_db sprot_no_training.fasta
 ```
-### Test the model
+### 3.2 Test the model
 After that, all the sequences in SP were tested with hmmsearch using the option ‘--max’ which excludes all the heuristic filters. By default, hmmsearch reported in the result only sequences over an E-value threshold of 10. Since the computation of the E-value is influenced by the database search space (Finn et al., 2011), the test was performed once on the entire SP and then the random splitting was applied in order to avoid a bias due to different database size.
 ```
 hmmsearch --cpu 6 --max --noali --tblout hmm_result kunitz.hmm sprot_no_training.fasta
@@ -108,7 +112,7 @@ grep -v "^#" hmm_result | awk -v OFS="\t" '$1=$1' | cut -f5 > eval_list
 paste id_list eval_list > hmm_result && rm id_list eval_list 
 ```
 # 4. E-value optimization and classification benchmark
-## Generate the two subsets by random spplitting Uniprot
+## 4.1 Generate the two subsets by random spplitting Uniprot
 In order to select the E-value maximizing the classification performance, the entire SP ID list was split into 2 subsets, using a python script. The subsets lists were generated randomly of equal length and with the same proportion of Kunitz proteins.
 
 _#download id list of no_kuntiz and kunitz (PF00014) in swissprot_
@@ -133,7 +137,7 @@ p ../py_scripts/random_split.py hmm_result sets/kunitz_no_training.list $not_kun
 cut -f1 sets/subset_1 sets/subset_2 | sort -u | wc 
 comm -12 <(sort sets/subset_1) <(sort sets/subset_2)
 ```
-## E-value optimization and classification benchmark
+## 4.2 E-value optimization and classification benchmark
 Subset1 was adopted to select the best threshold and subset2 was adopted as the test set. The role of the 2 subsets was then swapped to cross-validate the results. The 2 subsets lists were annotated with either 1 or 0 depending on the presence of the Kunitz do- main according to PFAM and with the E-value previously resulted from hmmsearch. Since the distribution of Kunitz and non-Kunitz was skewed, Matthews’s correlation coefficient (MCC) (2) was adopted as classifica- tion score. Compared to accuracy (3) or F1 score, the MCC is a more re- liable statistical coefficient which produces a high score only if the pre- diction obtained good results in all of the four confusion matrix categories (true positives, false negatives, true negatives, and false positives), pro- portionally both to the size of positive elements and the size of negative elements in the dataset (Chicco and Jurman, 2020; Matthews, 1975).
 
 The classification benchmark was tested by running a python script (Sup- plementary material) for an E-value threshold decreasing exponentially from 1e-1 to 1e-12. For each subset, the E-value threshold for which the model guaranteed the best MCC was identified, and after that, it was ver- ified that the same outcome was achieved for the other subset. The average between the best threshold for both subset was applied in benchmarking the classification for the entire SP.

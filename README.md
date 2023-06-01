@@ -23,7 +23,7 @@ Altough this pipeline was designed specifically to model the Kunitz domain it wa
 
 
 ## Requirements
-The python code was tested on python 3.10 and pipeline on MacOS 13.
+The python code was tested using python 3.10 on MacOS 13.
 
 
 To run this pipeline the following programms need to be installed:

@@ -29,6 +29,7 @@ Webtools links:
 ## 1. Training set selection
 ### BPTI as prototype and search for similar structures
 The high-resolution structure of the bovine pancreatic trypsin inhibitor (1BPI) was chosen as the prototype of Kunitz domain to select the seeds (Parkin et al., 1996). The webtool [PDBeFold](https://www.ebi.ac.uk/msd-srv/ssm/) was adopted to perform a pairwise structural alignment over the entire PDB (Krissinel and Henrick, 2005; Berman et al., 2000) . PDBeFold was run with default parameters and precision set to ‘highest’ and the results were selected by a Q-score > 0.75.
+
 _#download fasta sequences_
 ``` 
 fasta_similar_structure='bpt1_result_qscore_0.75.fasta.seq' 
@@ -43,7 +44,7 @@ cd-hit -i $fasta_similar_structure -o seeds_filt.fasta -c 1
 
 ## 2. MSA and HMM building
 ### Align structures and retrieve MSA
-A multiple structure alignment between the 77 representativses structures was performed using the [PDBeFold](https://www.ebi.ac.uk/msd-srv/ssm/). The MSA derived from the structure alignment, was downloaded and adopted as a training set for the HMM training.
+A multiple structure alignment between the  representativses structures was performed using the [PDBeFold](https://www.ebi.ac.uk/msd-srv/ssm/). The MSA derived from the structure alignment, was downloaded and adopted as a training set for the HMM training.
 
 #_Extract pdb id with chain to align the structures on pdbefold_
 
@@ -65,7 +66,7 @@ hmmbuild kunitz.hmm $msa
 
 ## 3. Test set preparation
 ### Remove high-similarity sequences from the test-set
-The entire UniProt/SwissProt release_2023_02 (SP) was chosen as a test set and the annotation of Kunitz domain (PF00014) according to PFAM v35.0 was chosen as reference to evaluate the classification performance. Before testing the model, the test set was elaborated in order to avoid a bias in the model evaluation. The seed sequences and all high similarity proteins (>95%), were removed from SP in order to perform a fair test of the HMM. To identify the high -similarity proteins, blastpgp v2.2.26 (gapped-BLAST) was run with default parameters, using the 77 training sequences as queries and the entire SP as target database (Altschul et al., 1997).
+The entire UniProt/SwissProt release_2023_02 (SP) was chosen as a test set and the annotation of Kunitz domain (PF00014) according to PFAM v35.0 was chosen as reference to evaluate the classification performance. Before testing the model, the test set was elaborated in order to avoid a bias in the model evaluation. The seed sequences and all high similarity proteins (>95%), were removed from SP in order to perform a fair test of the HMM. To identify the high-similarity proteins, blastpgp v2.2.26 (gapped-BLAST) was run with default parameters, using the training sequences as queries and the entire SP as target database (Altschul et al., 1997).
 
 _#map the training sequences PDB IDs to UniProt IDs_
 ```
@@ -147,9 +148,28 @@ cd sets
 for i in $(seq 1 12);do p ../../py_scripts/classification.py <(cat subset_2 subset_1) 1e-$i;done
 ```
 
+## References
 
-
-
-
-
+* Altschul,S.F. et al. (1997) Gapped BLAST and PSI-BLAST: a new generation of protein database search programs. Nucleic Acids Res., 25, 3389–3402.
+* Ascenzi,P. et al. The Bovine Basic Pancreatic Trypsin Inhibitor (Kunitz Inhibitor): A Milestone Protein. Curr. Protein Pept. Sci., 4, 231–251.
+* Bateman,A. and Haft,D.H. (2002) HMM-based databases in InterPro. Brief. Bioin- form., 3, 236–245.
+* Berman,H.M. et al. (2000) The Protein Data Bank. Nucleic Acids Res., 28, 235–242. Chen,P. et al. (2013) Collagen VI in cancer and its biological mechanisms. Trend Mol. Med., 19, 410–417.
+* Chicco,D. and Jurman,G. (2020) The advantages of the Matthews correlation coefficient (MCC) over F1 score and accuracy in binary classification evaluation. BMC Genomics, 21, 6.
+* Cotabarren,J. et al. (2020) Biotechnological, biomedical, and agronomical applications of plant protease inhibitors with high stability: A systematic review. Plant Sci., 292, 110398.
+* Eddy,S.R. (2011) Accelerated Profile HMM Searches. PLOS Comput. Biol., 7,e1002195.
+* Finn,R.D. et al. (2011) HMMER web server: interactive sequence similarity searching. Nucleic Acids Res., 39, W29–W37.
+* Fries,E. and Kaczmarczyk,A. (2003) Inter-alpha-inhibitor, hyaluronan and inflammation. Acta Biochim. Pol., 50, 735–742.
+* Fry,B.G. et al. (2009) The Toxicogenomic Multiverse: Convergent Recruitment of
+* Proteins Into Animal Venoms. Annu. Rev. Genomics Hum. Genet., 10, 483–511. Fu,L. et al. (2012) CD-HIT: accelerated for clustering the next-generation sequencing data. Bioinformatics, 28, 3150–3152.
+* Hynes,T.R. et al. (1990) X-ray crystal structure of the protease inhibitor domain of
+* Alzheimer’s amyloid .beta.-protein precursor. Biochemistry, 29, 10018–10022. Jr,G.J.B. and Girard,T.J. (2012) Tissue factor pathway inhibitor: structure-function. Front. Biosci.-Landmark, 17, 262–280.
+* Krissinel,E. and Henrick,K. (2005) Multiple Alignment of Protein Structures in Three Dimensions. In, R. Berthold,M. et al. (eds), Computational Life Sciences, Lecture Notes in Computer Science. Springer, Berlin, Heidelberg, pp. 67–78.
+* Lemmer,J.H. et al. (1994) Aprotinin for coronary bypass operations: Efficacy, safety, and influence on early saphenous vein graft patency: A multicenter, randomized, double-blind, placebo-controlled study. J. Thorac. Cardiovasc. Surg., 107, 543– 553.
+* Matthews,B.W. (1975) Comparison of the predicted and observed secondary struc- ture of T4 phage lysozyme. Biochim. Biophys. Acta BBA - Protein Struct., 405, 442–451.
+* Parkin,S. et al. (1996) Structure of bovine pancreatic trypsin inhibitor at 125 K defi- nition of carboxyl-terminal residues Gly57 and Ala58. Acta Crystallogr. D Biol. Crystallogr., 52, 18–29.
+* RAWLINGS,N.D. et al. (2004) Evolutionary families of peptidase inhibitors. Bio- chem. J., 378, 705–716.
+* Royston,D. et al. (1987) EFFECT OF APROTININ ON NEED FOR BLOOD TRANSFUSION AFTER REPEAT OPEN-HEART SURGERY. The Lancet, 330, 1289–1291.
+* Sabotič,J. and Kos,J. (2012) Microbial and fungal protease inhibitors—current and potential applications. Appl. Microbiol. Biotechnol., 93, 1351–1375.
+* Stepek,G. et al. (2010) The kunitz domain protein BLI-5 plays a functionally con- served role in cuticle formation in a diverse range of nematodes. Mol. Biochem. Parasitol., 169, 1–11.
+* Wheeler,T.J. et al. (2014) Skylign: a tool for creating informative, interactive logos representing sequence alignments and profile hidden Markov models. BMC Bi- oinformatics, 15, 7.
 

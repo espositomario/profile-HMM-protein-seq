@@ -7,31 +7,18 @@ Altough this pipeline was designed specifically to model the Kunitz domain it wa
 
 * [Requirements](https://github.com/espositomario/HMM_Kunitz#requirements)
 * [0. Study Workflow](https://github.com/espositomario/HMM_Kunitz#study-workflow)
-
 * [1. Training set selection](https://github.com/espositomario/HMM_Kunitz#1-training-set-selection)
-
 	* [1.1. BPTI as prototype and search for similar structures](https://github.com/espositomario/HMM_Kunitz/blob/main/README.md#11-bpti-as-prototype-and-search-for-similar-structures)
-
 	* [1.2. Cluster identical sequences](https://github.com/espositomario/HMM_Kunitz/blob/main/README.md#12-cluster-identical-sequences)
-
 * [2. MSA and HMM building](https://github.com/espositomario/HMM_Kunitz#2-msa-and-hmm-building)
-
 	* [2.1 Align structures and retrieve MSA](https://github.com/espositomario/HMM_Kunitz/blob/main/README.md#21-align-structures-and-retrieve-msa)
-
 	* [2.2 Train the HMM](https://github.com/espositomario/HMM_Kunitz/blob/main/README.md#22-train-the-hmm)
-
 * [3. Test set preparation](https://github.com/espositomario/HMM_Kunitz#3-test-set-preparation)
-
 	* [3.1 Remove high-similarity sequences from the test-set](https://github.com/espositomario/HMM_Kunitz/blob/main/README.md#31-remove-high-similarity-sequences-from-the-test-set)
-
 	* [3.2 Test the model](https://github.com/espositomario/HMM_Kunitz/blob/main/README.md#32-test-the-model)
-
 * [4. E-value optimization and classification benchmark](https://github.com/espositomario/HMM_Kunitz#4-e-value-optimization-and-classification-benchmark)
-
 	* [4.1 Generate the two subsets by random spplitting Uniprot](https://github.com/espositomario/HMM_Kunitz/blob/main/README.md#41-generate-the-two-subsets-by-random-spplitting-uniprot)
-
 	* [4.2 E-value optimization and classification benchmark](https://github.com/espositomario/HMM_Kunitz/blob/main/README.md#42-e-value-optimization-and-classification-benchmark)
-
 * [References](https://github.com/espositomario/HMM_Kunitz#references)
 
 

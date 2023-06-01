@@ -153,9 +153,9 @@ cut -f1 sets/subset_1 sets/subset_2 | sort -u | wc
 comm -12 <(sort sets/subset_1) <(sort sets/subset_2)
 ```
 ## 4.2 E-value optimization and classification benchmark
-Subset1 was adopted to select the best threshold and subset2 was adopted as the test set. The role of the 2 subsets was then swapped to cross-validate the results. The 2 subsets lists were annotated with either 1 or 0 depending on the presence of the Kunitz do- main according to PFAM and with the E-value previously resulted from hmmsearch. Since the distribution of Kunitz and non-Kunitz was skewed, Matthews’s correlation coefficient (MCC) (2) was adopted as classifica- tion score. Compared to accuracy (3) or F1 score, the MCC is a more re- liable statistical coefficient which produces a high score only if the pre- diction obtained good results in all of the four confusion matrix categories (true positives, false negatives, true negatives, and false positives), pro- portionally both to the size of positive elements and the size of negative elements in the dataset (Chicco and Jurman, 2020; Matthews, 1975).
+Subset1 was adopted to select the best threshold and subset2 was adopted as the test set. The role of the 2 subsets was then swapped to cross-validate the results. The 2 subsets lists were annotated with either 1 or 0 depending on the presence of the Kunitz domain according to PFAM and with the E-value previously resulted from hmmsearch. Since the distribution of Kunitz and non-Kunitz was skewed, Matthews’s correlation coefficient (MCC) (2) was adopted as classification score. Compared to accuracy (3) or F1 score, the MCC is a more reliable statistical coefficient which produces a high score only if the prediction obtained good results in all of the four confusion matrix categories (true positives, false negatives, true negatives, and false positives), proportionally both to the size of positive elements and the size of negative elements in the dataset (Chicco and Jurman, 2020; Matthews, 1975).
 
-The classification benchmark was tested by running a python script (Sup- plementary material) for an E-value threshold decreasing exponentially from 1e-1 to 1e-12. For each subset, the E-value threshold for which the model guaranteed the best MCC was identified, and after that, it was ver- ified that the same outcome was achieved for the other subset. The average between the best threshold for both subset was applied in benchmarking the classification for the entire SP.
+The classification benchmark was tested by running a python script (Supplementary material) for an E-value threshold decreasing exponentially from 1e-1 to 1e-12. For each subset, the E-value threshold for which the model guaranteed the best MCC was identified, and after that, it was verified that the same outcome was achieved for the other subset. The average between the best threshold for both subset was applied in benchmarking the classification for the entire SP.
 
 _#optimization and classification test on the subsets + lineplot_
 ```
@@ -171,7 +171,7 @@ for i in $(seq 1 12);do p ../../py_scripts/classification.py <(cat subset_2 subs
 
 * Altschul,S.F. et al. (1997) Gapped BLAST and PSI-BLAST: a new generation of protein database search programs. Nucleic Acids Res., 25, 3389–3402.
 * Ascenzi,P. et al. The Bovine Basic Pancreatic Trypsin Inhibitor (Kunitz Inhibitor): A Milestone Protein. Curr. Protein Pept. Sci., 4, 231–251.
-* Bateman,A. and Haft,D.H. (2002) HMM-based databases in InterPro. Brief. Bioin- form., 3, 236–245.
+* Bateman,A. and Haft,D.H. (2002) HMM-based databases in InterPro. Brief. Bioinform., 3, 236–245.
 * Berman,H.M. et al. (2000) The Protein Data Bank. Nucleic Acids Res., 28, 235–242. Chen,P. et al. (2013) Collagen VI in cancer and its biological mechanisms. Trend Mol. Med., 19, 410–417.
 * Chicco,D. and Jurman,G. (2020) The advantages of the Matthews correlation coefficient (MCC) over F1 score and accuracy in binary classification evaluation. BMC Genomics, 21, 6.
 * Cotabarren,J. et al. (2020) Biotechnological, biomedical, and agronomical applications of plant protease inhibitors with high stability: A systematic review. Plant Sci., 292, 110398.
@@ -184,11 +184,11 @@ for i in $(seq 1 12);do p ../../py_scripts/classification.py <(cat subset_2 subs
 * Alzheimer’s amyloid .beta.-protein precursor. Biochemistry, 29, 10018–10022. Jr,G.J.B. and Girard,T.J. (2012) Tissue factor pathway inhibitor: structure-function. Front. Biosci.-Landmark, 17, 262–280.
 * Krissinel,E. and Henrick,K. (2005) Multiple Alignment of Protein Structures in Three Dimensions. In, R. Berthold,M. et al. (eds), Computational Life Sciences, Lecture Notes in Computer Science. Springer, Berlin, Heidelberg, pp. 67–78.
 * Lemmer,J.H. et al. (1994) Aprotinin for coronary bypass operations: Efficacy, safety, and influence on early saphenous vein graft patency: A multicenter, randomized, double-blind, placebo-controlled study. J. Thorac. Cardiovasc. Surg., 107, 543– 553.
-* Matthews,B.W. (1975) Comparison of the predicted and observed secondary struc- ture of T4 phage lysozyme. Biochim. Biophys. Acta BBA - Protein Struct., 405, 442–451.
+* Matthews,B.W. (1975) Comparison of the predicted and observed secondary structure of T4 phage lysozyme. Biochim. Biophys. Acta BBA - Protein Struct., 405, 442–451.
 * Parkin,S. et al. (1996) Structure of bovine pancreatic trypsin inhibitor at 125 K defi- nition of carboxyl-terminal residues Gly57 and Ala58. Acta Crystallogr. D Biol. Crystallogr., 52, 18–29.
 * RAWLINGS,N.D. et al. (2004) Evolutionary families of peptidase inhibitors. Bio- chem. J., 378, 705–716.
 * Royston,D. et al. (1987) EFFECT OF APROTININ ON NEED FOR BLOOD TRANSFUSION AFTER REPEAT OPEN-HEART SURGERY. The Lancet, 330, 1289–1291.
 * Sabotič,J. and Kos,J. (2012) Microbial and fungal protease inhibitors—current and potential applications. Appl. Microbiol. Biotechnol., 93, 1351–1375.
-* Stepek,G. et al. (2010) The kunitz domain protein BLI-5 plays a functionally con- served role in cuticle formation in a diverse range of nematodes. Mol. Biochem. Parasitol., 169, 1–11.
-* Wheeler,T.J. et al. (2014) Skylign: a tool for creating informative, interactive logos representing sequence alignments and profile hidden Markov models. BMC Bi- oinformatics, 15, 7.
+* Stepek,G. et al. (2010) The kunitz domain protein BLI-5 plays a functionally conserved role in cuticle formation in a diverse range of nematodes. Mol. Biochem. Parasitol., 169, 1–11.
+* Wheeler,T.J. et al. (2014) Skylign: a tool for creating informative, interactive logos representing sequence alignments and profile hidden Markov models. BMC Bioinformatics, 15, 7.
 

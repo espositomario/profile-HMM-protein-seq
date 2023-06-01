@@ -3,11 +3,21 @@ This repository contains the **bash commands**, all the **pyhton codes**, and th
 However, the following pipeline is designed to work for any other protein domain.
 
 ## Table of contents
-1. [Study Workflow](project URL#<header name)
 
+[Requirements](https://github.com/espositomario/HMM_Kunitz#requirements)
 
-## Study workflow
-The aim of this study is to develop an HMM-based method which reliably identifies the presence of the Kunitz domain in UniProtKB/SwissProt sequences. In principle, a profile HMM can be derived from unaligned sequences by training. However, the parameters for a profile HMM are more accurately estimated from a multiple sequence alignment (MSA) and this has become the method of choice (Bateman and Haft, 2002). The MSA was retrieved from the alignment of 77 structures similar to the BPTI. The HMM was trained over this MSA and then UniProtKB/SwissProt was adopted to optimize and test the classification performance of the method. 
+[0. Study Workflow](https://github.com/espositomario/HMM_Kunitz#study-workflow)
+
+[1. Training set selection](https://github.com/espositomario/HMM_Kunitz#1-training-set-selection)
+
+[2. MSA and HMM building](https://github.com/espositomario/HMM_Kunitz#2-msa-and-hmm-building)
+
+[3. Test set preparation](https://github.com/espositomario/HMM_Kunitz#3-test-set-preparation)
+
+[4. E-value optimization and classification benchmark](https://github.com/espositomario/HMM_Kunitz#4-e-value-optimization-and-classification-benchmark)
+
+[References](https://github.com/espositomario/HMM_Kunitz#references)
+
 
 ## Requirements
 The python code was tested on python 3.10 and pipeline on MacOS 13.
@@ -29,6 +39,11 @@ Webtools links:
 * [PDBeFold](https://www.ebi.ac.uk/msd-srv/ssm/)
 * [Skyalign](http://skylign.org/) 
 * [Uniprot ID Mapping](https://www.uniprot.org/id-mapping)
+
+## Study workflow
+The aim of this study is to develop an HMM-based method which reliably identifies the presence of the Kunitz domain in UniProtKB/SwissProt sequences. In principle, a profile HMM can be derived from unaligned sequences by training. However, the parameters for a profile HMM are more accurately estimated from a multiple sequence alignment (MSA) and this has become the method of choice (Bateman and Haft, 2002). The MSA was retrieved from the alignment of 77 structures similar to the BPTI. The HMM was trained over this MSA and then UniProtKB/SwissProt was adopted to optimize and test the classification performance of the method. 
+
+
 
 ## 1. Training set selection
 ### 1.1 BPTI as prototype and search for similar structures

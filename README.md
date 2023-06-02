@@ -82,7 +82,7 @@ msa='msa_seeds.seq'
 grep . $msa > $msa.tmp && mv $msa.tmp $msa 
 ```
 ### 2.2 Train the HMM 
-The hmmbuild program provided by HMMER v3.3.2 was chosen to train the Kunitz’s HMM, leaving the optimal trimming on the MSA to the algorithm (Eddy, 2011). The HMM profile logo was plotted with [Skyalign](http://skylign.org/) (Wheeler et al., 2014).
+The hmmbuild program provided by HMMER v3.3.2 was chosen to train the Kunitz’s HMM, leaving the optimal trimming on the MSA to the algorithm (Eddy, 2011). The HMM profile logo was plotted with [Skylign](http://skylign.org/) (Wheeler et al., 2014).
 
 ```
 hmmbuild kunitz.hmm $msa
@@ -182,18 +182,10 @@ for i in $(seq 1 12);do p ../../py_scripts/classification.py <(cat subset_2 subs
 * Cotabarren,J. et al. (2020) Biotechnological, biomedical, and agronomical applications of plant protease inhibitors with high stability: A systematic review. Plant Sci., 292, 110398.
 * Eddy,S.R. (2011) Accelerated Profile HMM Searches. PLOS Comput. Biol., 7,e1002195.
 * Finn,R.D. et al. (2011) HMMER web server: interactive sequence similarity searching. Nucleic Acids Res., 39, W29–W37.
-* Fries,E. and Kaczmarczyk,A. (2003) Inter-alpha-inhibitor, hyaluronan and inflammation. Acta Biochim. Pol., 50, 735–742.
 * Fry,B.G. et al. (2009) The Toxicogenomic Multiverse: Convergent Recruitment of
 * Proteins Into Animal Venoms. Annu. Rev. Genomics Hum. Genet., 10, 483–511. Fu,L. et al. (2012) CD-HIT: accelerated for clustering the next-generation sequencing data. Bioinformatics, 28, 3150–3152.
-* Hynes,T.R. et al. (1990) X-ray crystal structure of the protease inhibitor domain of
-* Alzheimer’s amyloid .beta.-protein precursor. Biochemistry, 29, 10018–10022. Jr,G.J.B. and Girard,T.J. (2012) Tissue factor pathway inhibitor: structure-function. Front. Biosci.-Landmark, 17, 262–280.
 * Krissinel,E. and Henrick,K. (2005) Multiple Alignment of Protein Structures in Three Dimensions. In, R. Berthold,M. et al. (eds), Computational Life Sciences, Lecture Notes in Computer Science. Springer, Berlin, Heidelberg, pp. 67–78.
-* Lemmer,J.H. et al. (1994) Aprotinin for coronary bypass operations: Efficacy, safety, and influence on early saphenous vein graft patency: A multicenter, randomized, double-blind, placebo-controlled study. J. Thorac. Cardiovasc. Surg., 107, 543– 553.
 * Matthews,B.W. (1975) Comparison of the predicted and observed secondary structure of T4 phage lysozyme. Biochim. Biophys. Acta BBA - Protein Struct., 405, 442–451.
 * Parkin,S. et al. (1996) Structure of bovine pancreatic trypsin inhibitor at 125 K defi- nition of carboxyl-terminal residues Gly57 and Ala58. Acta Crystallogr. D Biol. Crystallogr., 52, 18–29.
-* RAWLINGS,N.D. et al. (2004) Evolutionary families of peptidase inhibitors. Bio- chem. J., 378, 705–716.
-* Royston,D. et al. (1987) EFFECT OF APROTININ ON NEED FOR BLOOD TRANSFUSION AFTER REPEAT OPEN-HEART SURGERY. The Lancet, 330, 1289–1291.
-* Sabotič,J. and Kos,J. (2012) Microbial and fungal protease inhibitors—current and potential applications. Appl. Microbiol. Biotechnol., 93, 1351–1375.
-* Stepek,G. et al. (2010) The kunitz domain protein BLI-5 plays a functionally conserved role in cuticle formation in a diverse range of nematodes. Mol. Biochem. Parasitol., 169, 1–11.
 * Wheeler,T.J. et al. (2014) Skylign: a tool for creating informative, interactive logos representing sequence alignments and profile hidden Markov models. BMC Bioinformatics, 15, 7.
 

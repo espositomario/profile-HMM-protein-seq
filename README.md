@@ -31,7 +31,7 @@ To run this pipeline the following programms need to be installed:
 * CD-HIT 4.8.1
 * blastpgp 2.2.26
 * HMMER 3.3.2
-```
+```bash
 conda create -n hmm_kunitz blast-legacy hmmer cd-hit 
 conda activate hmm_kunitz 
 ```
@@ -55,14 +55,14 @@ The aim of this study is to develop an HMM-based method which reliably identifie
 The high-resolution structure of the bovine pancreatic trypsin inhibitor (1BPI) was chosen as the prototype of Kunitz domain to select the seeds (Parkin et al., 1996). The webtool [PDBeFold](https://www.ebi.ac.uk/msd-srv/ssm/) was adopted to perform a pairwise structural alignment over the entire PDB (Krissinel and Henrick, 2005; Berman et al., 2000) . PDBeFold was run with default parameters and precision set to ‘highest’ and the results were selected by a Q-score > 0.75.
 
 _#download fasta sequences_
-``` 
+``` bash
 fasta_similar_structure='bpt1_result_qscore_0.75.fasta.seq' 
 ```
 
 ### 1.2 Cluster identical sequences
 To avoid a bias in the HMM construction, CD-HIT v4.8.1 was adopted to cluster identical sequences and select the longest representative for each cluster (Fu et al., 2012). A threshold of 100% identity was chosen to maintain also sequences differing for only one residue, so that no information on variation went lost.
 
-```
+```bash
 cd-hit -i $fasta_similar_structure -o seeds_filt.fasta -c 1
 ```
 
@@ -72,19 +72,19 @@ A multiple structure alignment between the  representativses structures was perf
 
 #_Extract pdb id with chain to align the structures on pdbefold_
 
-```
+```bash
 grep  '^>' seeds_filt.fasta | cut -d' ' -f1 | cut -c6- > sets/pdb_id_training.list
 ```
 
 _#Align on [PDBeFold](https://www.ebi.ac.uk/msd-srv/ssm/) and download the msa_
-```
+```bash
 msa='msa_seeds.seq'
 grep . $msa > $msa.tmp && mv $msa.tmp $msa 
 ```
 ### 2.2 Train the HMM 
 The hmmbuild program provided by HMMER v3.3.2 was chosen to train the Kunitz’s HMM, leaving the optimal trimming on the MSA to the algorithm (Eddy, 2011). The HMM profile logo was plotted with [Skylign](http://skylign.org/) (Wheeler et al., 2014).
 
-```
+```bash
 hmmbuild kunitz.hmm $msa
 ````
 
@@ -93,12 +93,12 @@ hmmbuild kunitz.hmm $msa
 The entire UniProt/SwissProt release_2023_02 (SP) was chosen as a test set and the annotation of Kunitz domain (PF00014) according to PFAM v35.0 was chosen as reference to evaluate the classification performance. Before testing the model, the test set was elaborated in order to avoid a bias in the model evaluation. The seed sequences and all high similarity proteins (>95%), were removed from SP in order to perform a fair test of the HMM. To identify the high-similarity proteins, blastpgp v2.2.26 (gapped-BLAST) was run with default parameters, using the training sequences as queries and the entire SP as target database (Altschul et al., 1997).
 
 _#map the training sequences PDB IDs to UniProt IDs_
-```
+```bash
 id_mapped='sets/id_mapped.list'
 tail +2 $id_mapped | cut -f 2 > $id_mapped.tmp && mv $id_mapped.tmp $id_mapped                 
 ```
 _#find high similarity seq in the test set using blastpgb_
-```
+```bash
 fasta_db='../db/uniprot_sprot.fasta'
 formatdb -i $fasta_db
 blastpgp -i seeds_filt.fasta -d $fasta_db -m 8 -o blastpgp_results.bl8
@@ -106,27 +106,27 @@ blastpgp -i seeds_filt.fasta -d $fasta_db -m 8 -o blastpgp_results.bl8
 
 _#remove them with a py script using a treshold of 95% idenitity_
 
-```
+```bash
 p ../py_scripts/filter_blast_result.py blastpgp_results.bl8 sets/ids_similar95_to_remove 95
 sort -u sets/ids_similar95_to_remove > sets/ids_similar95_to_remove.tmp && mv sets/ids_similar95_to_remove.tmp sets/ids_similar95_to_remove
 ```
 _#keep uniq from mapped id and high similarity_
-```
+```bash
 sort -u sets/ids_similar95_to_remove $id_mapped > sets/id_to_remove.tmp && mv sets/id_to_remove.tmp sets/id_to_remove
 ```
 _#modify the test set removing training seq_
 
-```
+```bash
 ids_to_remove='sets/id_to_remove'
 p ../py_scripts/remove_fasta_by_id.py $ids_to_remove $fasta_db sprot_no_training.fasta
 ```
 ### 3.2 Test the model
 After that, all the sequences in SP were tested with hmmsearch using the option ‘--max’ which excludes all the heuristic filters. By default, hmmsearch reported in the result only sequences over an E-value threshold of 10. Since the computation of the E-value is influenced by the database search space (Finn et al., 2011), the test was performed once on the entire SP and then the random splitting was applied in order to avoid a bias due to different database size.
-```
+```bash
 hmmsearch --cpu 6 --max --noali --tblout hmm_result kunitz.hmm sprot_no_training.fasta
 ```
 _#extract only ID and e-val columns from the hmm result file_
-```
+```bash
 grep -v "^#" hmm_result | awk -v OFS="\t" '$1=$1' | cut -f1 | cut -d '|' -f 2 > id_list
 grep -v "^#" hmm_result | awk -v OFS="\t" '$1=$1' | cut -f5 > eval_list
 paste id_list eval_list > hmm_result && rm id_list eval_list 
@@ -136,7 +136,7 @@ paste id_list eval_list > hmm_result && rm id_list eval_list
 In order to select the E-value maximizing the classification performance, the entire SP ID list was split into 2 subsets, using a python script. The subsets lists were generated randomly of equal length and with the same proportion of Kunitz proteins.
 
 _#download id list of no_kuntiz and kunitz (PF00014) in swissprot_
-```
+```bash
 kunitz_ids='sets/kunitz_390.list'
 not_kunitz_ids='sets/no_kunitz_569126.list'
 tail +2 $not_kunitz_ids  > $not_kunitz_ids.tmp && mv $not_kunitz_ids.tmp $not_kunitz_ids
@@ -144,16 +144,16 @@ tail +2 $kunitz_ids  > $kunitz_ids.tmp && mv $kunitz_ids.tmp $kunitz_ids
 ```
 
 _#remove the training seq from the kunitz id list_
-```
+```bash
 grep -vxf $ids_to_remove $kunitz_ids > sets/kunitz_no_training.list
 ```
 
 _#use the python script to create the subset 1 and 2_
-```
+```bash
 p ../py_scripts/random_split.py hmm_result sets/kunitz_no_training.list $not_kunitz_ids sets/subset_1 sets/subset_2 
 ``` 
 #check the uniqness of the ids and that there are no seq in common
-```
+```bash
 cut -f1 sets/subset_1 sets/subset_2 | sort -u | wc 
 comm -12 <(sort sets/subset_1) <(sort sets/subset_2)
 ```
@@ -163,11 +163,11 @@ Subset1 was adopted to select the best threshold and subset2 was adopted as the 
 The classification benchmark was tested by running a python script (Supplementary material) for an E-value threshold decreasing exponentially from 1e-1 to 1e-12. For each subset, the E-value threshold for which the model guaranteed the best MCC was identified, and after that, it was verified that the same outcome was achieved for the other subset. The average between the best threshold for both subset was applied in benchmarking the classification for the entire SP.
 
 _#optimization and classification test on the subsets + lineplot_
-```
+```bash
 p ../py_scripts/optimization.py sets/subset_1 sets/subset_2 1e-1 1e-12 > classification_result
 ```
 _#classification on SwissProt_
-```
+```bash
 cd sets 
 for i in $(seq 1 12);do p ../../py_scripts/classification.py <(cat subset_2 subset_1) 1e-$i;done
 ```
